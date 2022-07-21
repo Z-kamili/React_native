@@ -7,10 +7,8 @@ export default function App() {
       <View>
           <Text>Another piece of text!</Text>
       </View>
-      <Text>Hello World!</Text>
-      <Button
-        title="Press Me"
-        />
+      <Text style={styles.dummyText}>Hello World!</Text>
+      <Button title="Press Me"/>
     </View>
   );
 }
@@ -22,4 +20,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  dummyText : {
+     margin:16,
+     padding:16,
+     borderWidth:2,
+     borderColor:'red',
+  }
 });
