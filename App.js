@@ -3,10 +3,8 @@ import { StyleSheet, Text, View,Button,TextInput, ScrollView,FlatList } from 're
 import { useState } from 'react';
 import GoalItem from './components/GoalItem';
 import GoalInput from './components/GoalInput';
+
 export default function App() {
-
-
-
   //usestate
   const [ModalIsVisible,setModalIsVisible] = useState(false);
   const [courseGoals,setCourseGoals] = useState([]);
@@ -26,7 +24,8 @@ export default function App() {
 
 
 
-  function addGoalHandler(enteredGoalText){
+  function addGoalHandler(enteredGoalText)
+  {
 
       setCourseGoals( ( currentCourseGoals ) => 
       [...currentCourseGoals 
@@ -45,26 +44,18 @@ export default function App() {
   }
 
   return (
-
     <View style={styles.appContainer}>
       <Button title='Add New Goal' visible={!ModalIsVisible} color="#5e0acc" onPress={startAddGoalHandler} />
         <GoalInput visible={ModalIsVisible}   onCancel={endAddGoalHandler}  onAddGoal={addGoalHandler}/>    
-
        <View style={styles.goalsContainer}>
-
         <FlatList data={courseGoals} renderItem={(itemData) => {
-          
            return <GoalItem 
            text={itemData.item.text}
            id={itemData.item.id}
            onDeleteItem={deleteGoalHandler}
            >
            </GoalItem>;
-
-        }} 
-        // keyExtractor={(item,index) => {
-        //     return item.id; 
-        // }}           
+        }}          
         alwaysBounceVertical={false}
         />
        </View>
@@ -110,10 +101,5 @@ const styles = StyleSheet.create({
      flex:5
 
   },
-
-
-
-
-
 
 });

@@ -14,22 +14,30 @@ function GoalInput(props) {
     function addGoalHandler() {
 
         props.onAddGoal(enteredGoalText);
-        setEnteredGoalText(" ");
+        setEnteredGoalText(' ');
 
     }
+
+    // console.log(enteredGoalText);
+
+
 
     return  (
 
         <Modal   visible={props.visible} animationType="slide">
             <View style={styles.inputContainer}>
-                <Image style={styles.image} source={require('../assets/images/goal.png')} />
+                <Image 
+                style={styles.image} 
+                source={require('../assets/images/goal.png')} 
+                //source="/some/path/to/image.png"
+                />
                 <TextInput  style={styles.TextInput}  onChangeText={goalInputHandler} value={enteredGoalText}></TextInput>
                 <View style={styles.buttonContainer}>
                     <View style={styles.button}>
-                         <Button style title="Add Goal" onPress={addGoalHandler} />
+                         <Button style title="Add Goal" onPress={addGoalHandler} color="#5e0acc" />
                     </View>
                     <View style={styles.button}>
-                          <Button title="Cancel" onPress={props.onCancel}></Button>
+                          <Button title="Cancel" onPress={props.onCancel} color="#f31282"></Button>
                     </View>
                
                 </View>
@@ -53,7 +61,7 @@ const  styles = StyleSheet.create({
 
     inputContainer:{
 
-        flex:1,
+        height:'100%',
         flexDirection:'column',
         justifyContent:'center',
         alignItems:'center',
@@ -77,8 +85,11 @@ const  styles = StyleSheet.create({
      TextInput : {
    
        borderWidth:1,
-       borderColor:'#cccccc',
+       borderColor:'#e4d0ff',
        width:'100%',
+       backgroundColor:'#e4d0ff',
+       color:'#120438',
+       borderRadius:6,
        marginRight:8,
        padding:8
    
